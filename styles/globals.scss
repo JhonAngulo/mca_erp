@@ -8,3 +8,30 @@ body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
 }
+
+.user {
+  
+  &__info {
+    text-align: center;
+    justify-content: center;
+  }
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 18px;
+    color: #263238;
+  }
+
+  &__position {
+    margin: 0;
+    font-size: 14px;
+    color: #546e7a;
+  }
+  
+}
