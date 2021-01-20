@@ -1,0 +1,29 @@
+.header {
+  height: 60px;
+  background-color: $primary_color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    margin-left: 10px;
+    color: $white_color;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  &__nav {
+    margin-right: 10px;
+    color: $white_color;
+
+    &-list {
+      list-style: none;
+      display: flex;
+    }
+
+    &-item {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
