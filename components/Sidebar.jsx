@@ -27,18 +27,19 @@ function Sidebar() {
   ]
 
   return (
-    <div className='Sidebar'>
-      <UserInfo />
-      <ul>
-        {
-          menu.map(item => (
-            <li key={item.option}>
-              <Link href={`/${item.option}`}>
-                <a >{item.option}</a>
-              </Link>
-            </li>
-          ))
-        }
+    <div className='sidebar'>
+      <div className='sidebar__user'>
+        <UserInfo />
+      </div>
+
+      <ul className='sidebar__menu'>
+        {menu.map((item) => (
+          <li key={item.option}>
+            <Link href={`/${item.option}`}>
+              <a>{item.option}</a>
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   )

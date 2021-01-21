@@ -1,0 +1,14 @@
+.sidebar {
+  border-right: 1px solid #5242;
+
+  &__user {
+    margin-top: 50px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #5242;
+  }
+
+  &__menu {
+    margin-left: 20px;
+    list-style: none;
+  }
+}

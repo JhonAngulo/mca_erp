@@ -5,7 +5,6 @@ export default function Home() {
     <>
       <Head>
         <title>MCA ERP</title>
-        <link rel='icon' href='/favicon.ico' />
       </Head>
       esto es el index
     </>

@@ -1,9 +1,14 @@
+import Link from 'next/link'
+
 function Header() {
   return (
     <header className='header'>
-      <a href="" className='header__logo'>
-        MCA - ERP
-      </a>
+      <Link href='/'>
+      <a className='header__logo'>MCA - ERP</a>
+      </Link>
+       
+      
+
       <nav className='header__nav'>
         <ul className='header__nav-list'>
           <li className='header__nav-item'>Configuración</li>

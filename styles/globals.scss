@@ -3,6 +3,7 @@
 @import "./componets/variables";
 @import "./componets/layout";
 @import "./componets/header";
+@import "./componets/sidebar";
 
 * {
   margin: 0;
@@ -47,8 +48,8 @@ body {
   }
 
   &__avatar {
-    // width: 64px;
-    // height: 64px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
   }
 
