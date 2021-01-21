@@ -1,16 +1,16 @@
 import Header from './Header'
-import Footer from  './Footer'
-import UserInfo from './UserInfo'
+import Footer from './Footer'
+import Sidebar from './Sidebar'
 
 function Layout({ children }) {
   return (
     <>
-    <Header />
-    <UserInfo />
-    {
-      children
-    }
-    <Footer />
+      <Header />
+      <main className='main'>
+        <Sidebar />
+        <div className='container'>{children}</div>
+      </main>
+      <Footer />
     </>
   )
 }
