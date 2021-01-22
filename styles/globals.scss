@@ -4,6 +4,7 @@
 @import "./componets/layout";
 @import "./componets/header";
 @import "./componets/sidebar";
+@import "./componets/table";
 
 * {
   margin: 0;
@@ -35,9 +36,9 @@ body {
 }
 
 .container {
-  margin-top: 40px;
-  margin-left: 20px;
-  margin-right: 20px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
   height: 100%;
   width: 100%;
   overflow: auto;

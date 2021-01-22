@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import ClientsTable from '../components/tablas/ClientsTable'
+import Table from '../components/tablas/BasicTableSorting'
 
 function clientes() {
   return (
@@ -7,9 +7,10 @@ function clientes() {
       <Head>
         <title>MCA ERP | Clientes</title>
       </Head>
-      Clientes
+      Lista de Clientes
+      <br></br>
 
-      <ClientsTable />
+      <Table />
     </div>
   )
 }
