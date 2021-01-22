@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>MCA ERP</title>
+        <title>MCA ERP | Inicio</title>
       </Head>
-      esto es el index
+      ¡Hola! Bienvenido, que tengas un muy buen día.
     </>
   )
 }

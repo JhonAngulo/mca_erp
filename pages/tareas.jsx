@@ -1,14 +1,14 @@
 import Head from 'next/head'
 
-function about() {
+function tareas() {
   return (
     <div>
       <Head>
-        <title>MCA ERP | About</title>
+        <title>MCA ERP | Tareas</title>
       </Head>
-      About
+      Tareas
     </div>
   )
 }
 
-export default about
+export default tareas

@@ -6,23 +6,28 @@ function Sidebar() {
   const menu = [
     {
       icon: '',
-      option: 'inicio',
+      option: 'Inicio',
+      url: '/'
     },
     {
       icon: '',
-      option: 'clientes',
+      option: 'Clientes',
+      url: '/clientes'
     },
     {
       icon: '',
-      option: 'tareas',
+      option: 'Tareas',
+      url: '/tareas'
     },
     {
       icon: '',
-      option: 'soporte',
+      option: 'Soporte',
+      url: '/soporte'
     },
     {
       icon: '',
-      option: 'contactos',
+      option: 'Contactos',
+      url: '/contactos'
     },
   ]
 
@@ -34,14 +39,16 @@ function Sidebar() {
 
       <ul className='sidebar__menu'>
         {menu.map((item) => (
-          <li key={item.option}>
-            <Link href={`/${item.option}`}>
-              <a>{item.option}</a>
-            </Link>
-          </li>
+          <Link href={`${item.url}`} key={item.option}>
+            <li className='sidebar__menu-option' >
+              <a className='sidebar__menu-link'>
+                {item.option}
+              </a>
+            </li>
+          </Link>
         ))}
       </ul>
-    </div>
+    </div >
   )
 }
 
