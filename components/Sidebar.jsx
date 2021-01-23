@@ -39,13 +39,13 @@ function Sidebar() {
 
       <ul className='sidebar__menu'>
         {menu.map((item) => (
-          <Link href={`${item.url}`} key={item.option}>
-            <li className='sidebar__menu-option' >
+          <li key={item.option}>
+            <Link href={`${item.url}`} >
               <a className='sidebar__menu-link'>
                 {item.option}
               </a>
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
     </div >
