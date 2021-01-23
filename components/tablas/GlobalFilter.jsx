@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useAsyncDebounce } from 'react-table'
 
 function GlobalFilter({ filter, setFilter }) {
+  const [value, setValue] = useState(filter)
+
+  const HandleChange = useAsyncDebounce(value => {
+    setFilter(value || undefined)
+  }, 400)
   return (
     <span>
-      {/* https://www.youtube.com/watch?v=GsDP1bLoIQU&list=PLC3y8-rFHvwgWTSrDiwmUsl4ZvipOw9Cz&index=8 */}
+      Buscar:{' '}
+      <input value={value || ''} onChange={(e) => {
+        setValue(e.target.value)
+        HandleChange(e.target.value)
+      }} />
     </span>
   )
 }

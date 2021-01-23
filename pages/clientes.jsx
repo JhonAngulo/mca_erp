@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Table from '../components/tablas/BasicTableSorting'
+import Table from '../components/tablas/TableRowSelection'
 
 function clientes() {
   return (
