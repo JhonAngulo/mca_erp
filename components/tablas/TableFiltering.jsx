@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 
 import GlobalFilter from './GlobalFilter'
-import { useTable, useSortBy, useGlobalFilter, useFilters } from 'react-table'
+import { useTable, useSortBy, useGlobalFilter } from 'react-table'
 import { COLUMNS } from './columnsFormat'
 import MOCK_DATA from './MOCK_DATA.json'
 
@@ -13,7 +13,6 @@ function Table() {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    footerGroups,
     rows,
     prepareRow,
     state,
@@ -23,7 +22,8 @@ function Table() {
       columns,
       data,
     },
-    useFilters, useGlobalFilter, useSortBy
+    useGlobalFilter, 
+    useSortBy
   )
 
   const { globalFilter } = state
@@ -38,9 +38,6 @@ function Table() {
               {headerGroup.headers.map((column) => (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render('Header')}
-                  <div>
-                    {column.canFilter ? column.render('Filter') : null}
-                  </div>
                   <span>
                     {column.isSorted
                       ? column.isSortedDesc
@@ -65,15 +62,6 @@ function Table() {
             )
           })}
         </tbody>
-        <tfoot>
-          {footerGroups.map((footerGroup) => (
-            <tr {...footerGroup.getFooterGroupProps()}>
-              {footerGroup.headers.map((column) => (
-                <td {...column.getFooterProps()}>{column.render('Footer')}</td>
-              ))}
-            </tr>
-          ))}
-        </tfoot>
       </table>
     </div>
   )

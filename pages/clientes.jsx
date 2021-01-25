@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Table from '../components/tablas/TableSticky'
+import Table from '../components/tablas/TableFiltering'
 
 function clientes() {
   return (
