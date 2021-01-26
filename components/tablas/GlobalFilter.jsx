@@ -25,13 +25,13 @@ function GlobalFilter({ filter, setFilter }) {
   }
 
   return (
-    <span>
+    <label>
       Buscar:{' '}
       <input value={value || ''} onChange={(e) => {
         setValue(e.target.value)
         HandleChange(e.target.value)
       }} />
-    </span>
+    </label>
   )
 }
 

@@ -28,6 +28,8 @@ function Table() {
 
   const { globalFilter } = state
 
+  const xrows = rows.slice(0, 15)
+
   return (
     <div>
       <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
@@ -51,7 +53,7 @@ function Table() {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
+          {xrows.map((row) => {
             prepareRow(row)
             return (
               <tr {...row.getRowProps()}>
