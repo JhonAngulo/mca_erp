@@ -1,28 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import "regenerator-runtime/runtime"
+
+import React, { useState } from 'react'
 import { useAsyncDebounce } from 'react-table'
 
 function GlobalFilter({ filter, setFilter }) {
   const [value, setValue] = useState(filter)
-  const [search, setSearch] = useState(false)
 
-  // const HandleChange = useAsyncDebounce(value => {
-  //   setFilter(value || undefined)
-  // }, 400)
-
-  useEffect(() => {
-    let timeOutId
-    if (search) {
-      timeOutId = setTimeout(() => {
-        setFilter(value || undefined)
-      }, 400)
-    }
-    return () => clearTimeout(timeOutId)
-  }, [value, search])
-
-  const HandleChange = (e) => {
-    setSearch(true)
-    setValue(e)
-  }
+  const HandleChange = useAsyncDebounce(value => {
+    setFilter(value || undefined)
+  }, 400)
 
   return (
     <label>

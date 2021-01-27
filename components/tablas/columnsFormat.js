@@ -1,24 +1,16 @@
-import { format } from 'date-fns'
-
 export const COLUMNS = [
   {
-    Header: 'Id',
-    accessor: 'id',
-  },
-  {
-    Header: 'Nombre',
-    accessor: 'nombre',
-  },
-  {
-    Header: 'Apellido',
-    accessor: 'apellidos',
+    Header: 'Cliente',
+    accessor: data => {
+      return `${data.nombre} ${data.apellidos}`
+    },
   },
   {
     Header: 'Documento',
     accessor: 'numero_documento',
   },
   {
-    Header: 'Tipo Documento',
+    Header: 'Tipo Doc.',
     accessor: 'tipo_documento',
   },
   {
@@ -32,13 +24,5 @@ export const COLUMNS = [
   {
     Header: 'Ciudad',
     accessor: 'ciudad',
-  },
-  {
-    Header: 'Direccion',
-    accessor: 'direccion',
-  },
-  {
-    Header: 'Telefono',
-    accessor: 'telefono',
   }
 ]
