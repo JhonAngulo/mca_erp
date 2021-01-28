@@ -5,6 +5,7 @@
 @import "./componets/header";
 @import "./componets/sidebar";
 @import "./componets/table";
+@import "./componets/html_elements";
 
 * {
   margin: 0;
@@ -32,7 +33,6 @@ body {
   margin-top: 60px;
   display: grid;
   grid-template-columns: 240px 1fr;
-  
 }
 
 .container {
@@ -72,5 +72,5 @@ body {
 }
 
 .divider {
-  border-bottom: 4px solid $primary_color;
+  border-bottom: 2px solid $primary_color;
 }

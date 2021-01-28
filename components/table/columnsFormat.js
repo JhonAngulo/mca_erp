@@ -7,22 +7,18 @@ export const COLUMNS = [
   },
   {
     Header: 'Documento',
-    accessor: 'numero_documento',
-  },
-  {
-    Header: 'Tipo Doc.',
-    accessor: 'tipo_documento',
+    accessor: data => {
+      return `${data.tipo_documento} : ${data.numero_documento}`
+    },
   },
   {
     Header: 'Correo',
     accessor: 'correo',
   },
   {
-    Header: 'Pais',
-    accessor: 'pais',
-  },
-  {
-    Header: 'Ciudad',
-    accessor: 'ciudad',
+    Header: 'Ubicacion',
+    accessor: data => {
+      return `${data.pais} - ${data.ciudad}`
+    }
   }
 ]

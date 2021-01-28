@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 
 import GlobalFilter from './GlobalFilter'
-import { useTable, useSortBy, useGlobalFilter } from 'react-table'
+import { useTable, useSortBy, useGlobalFilter, usePagination } from 'react-table'
 import { COLUMNS } from './columnsFormat'
 import MOCK_DATA from './MOCK_DATA.json'
 
@@ -13,22 +13,30 @@ function Table() {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
     prepareRow,
     state,
-    setGlobalFilter
+    rows,
+    setGlobalFilter,
+    page,
+    pageOptions,
+    setPageSize,
+    pageCount,
+    nextPage,
+    previousPage,
+    canNextPage,
+    canPreviousPage,
   } = useTable(
     {
       columns,
       data,
+      initialState: { pageIndex: 0, pageSize: 10 }
     },
-    useGlobalFilter, 
-    useSortBy
+    useGlobalFilter,
+    useSortBy,
+    usePagination
   )
 
-  const { globalFilter } = state
-
-  const xrows = rows.slice(0, 15)
+  const { pageIndex, pageSize, globalFilter } = state
 
   return (
     <div>
@@ -53,7 +61,7 @@ function Table() {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {xrows.map((row) => {
+          {page.map((row, i) => {
             prepareRow(row)
             return (
               <tr {...row.getRowProps()}>
@@ -65,6 +73,32 @@ function Table() {
           })}
         </tbody>
       </table>
+      <div>
+        <span>
+          Mostrando{' '}
+          <strong>
+            {pageSize > rows.length ? rows.length : pageSize} de {rows.length}
+          </strong>{' '}
+        </span>
+
+        <label >
+          {`Listar: `}
+          <select value={pageSize} onChange={e => setPageSize(Number(e.target.value))}>
+            {
+              [10, 25, 50].map((pageSize) => (
+                <option key={pageSize} value={pageSize}>
+                  {pageSize}
+                </option>
+              ))
+            }
+          </select>
+        </label>
+
+        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage} >{'<<'}</button>
+        <button onClick={() => previousPage()} disabled={!canPreviousPage} >Previous</button>
+        <button onClick={() => nextPage()} disabled={!canNextPage} >Next</button>
+        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} >{'>>'}</button>
+      </div>
     </div>
   )
 }

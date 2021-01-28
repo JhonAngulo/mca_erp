@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Table from '@components/tablas/TableFiltering'
+import Table from '@components/table/TableFiltering'
 import PageTitle from '@components/PageTitle'
 
 function clientes() {

@@ -1,0 +1,91 @@
+
+.input-material {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 60px;
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
+
+  &,input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-text-fill-color: black;
+    }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: black;
+    border: none;
+    outline: 0px;
+    cursor: pointer;
+    font-size: 1.2rem;
+
+    &:focus + .input-material__label .input-material__text,
+    &:valid + .input-material__label .input-material__text {
+      transform: translateY(-150%);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: $primary_color;
+    }
+
+    &:focus + .input-material__label:after,
+    &:valid + .input-material__label:after {
+      transform: translateX(0%);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid $gray-color;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 100%;
+      height: 100%;
+      border-bottom: 2px solid $primary_color;
+      transform: translateX(-100%);
+      transition: all 300ms ease;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    transition: all 200ms ease;
+    color: black;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+  }
+  &__text-date {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    transition: all 200ms ease;
+    color: black;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+  }
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #fff;
+}
