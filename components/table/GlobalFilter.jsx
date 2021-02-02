@@ -1,8 +1,7 @@
 import "regenerator-runtime/runtime"
 
-import React, { useState } from 'react'
 import { useAsyncDebounce } from 'react-table'
-import SearchBar from '@components/SearchBar'
+import Input from '@components/Input'
 
 function GlobalFilter({ filter, setFilter }) {
 
@@ -15,14 +14,7 @@ function GlobalFilter({ filter, setFilter }) {
   }
 
   return (
-    <SearchBar text ='buscar cliente' type ='text' event={inputChange} value={filter}/>
-    // <label>
-    //   Buscar:{' '}
-    //   <input value={value || ''} onChange={(e) => {
-    //     setValue(e.target.value)
-    //     HandleChange(e.target.value)
-    //   }} />
-    // </label>
+    <Input text ='buscar cliente' type ='text' event={inputChange} value={filter}/>
   )
 }
 

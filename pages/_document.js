@@ -12,12 +12,13 @@ class MyDocument extends Document {
         <Head>
           <meta
             name='description'
-            content="Plataforma para gestios de MCA SYSTEMS SAS."
+            content='Plataforma para gestios de MCA SYSTEMS SAS.'
           />
           <link rel='icon' href='/favicon.ico' />
         </Head>
         <body>
           <Main />
+          <div id='modal'></div>
           <NextScript />
         </body>
       </Html>

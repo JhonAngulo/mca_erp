@@ -1,7 +1,12 @@
 import React, { useMemo } from 'react'
 
 import GlobalFilter from './GlobalFilter'
-import { useTable, useSortBy, useGlobalFilter, usePagination } from 'react-table'
+import {
+  useTable,
+  useSortBy,
+  useGlobalFilter,
+  usePagination,
+} from 'react-table'
 import { COLUMNS } from './columnsFormat'
 import MOCK_DATA from './MOCK_DATA.json'
 
@@ -18,8 +23,8 @@ function Table() {
     rows,
     setGlobalFilter,
     page,
-    pageOptions,
     setPageSize,
+    gotoPage,
     pageCount,
     nextPage,
     previousPage,
@@ -29,7 +34,7 @@ function Table() {
     {
       columns,
       data,
-      initialState: { pageIndex: 0, pageSize: 10 }
+      initialState: { pageIndex: 0, pageSize: 10 },
     },
     useGlobalFilter,
     useSortBy,
@@ -73,31 +78,66 @@ function Table() {
           })}
         </tbody>
       </table>
-      <div>
-        <span>
-          Mostrando{' '}
-          <strong>
-            {pageSize > rows.length ? rows.length : pageSize} de {rows.length}
-          </strong>{' '}
-        </span>
+      <div className='table-controls'>
+        <div>
+          <span>
+            Mostrando{' '}
+            <strong>
+              {pageSize > rows.length ? rows.length : pageSize} de {rows.length}
+            </strong>{' '}
+          </span>
 
-        <label >
-          {`Listar: `}
-          <select value={pageSize} onChange={e => setPageSize(Number(e.target.value))}>
-            {
-              [10, 25, 50].map((pageSize) => (
-                <option key={pageSize} value={pageSize}>
+          <label>
+            {`Listar: `}
+            <select
+              className='select'
+              value={pageSize}
+              onChange={(e) => setPageSize(Number(e.target.value))}
+            >
+              {[10, 25, 50].map((pageSize) => (
+                <option
+                  className='select__options'
+                  key={pageSize}
+                  value={pageSize}
+                >
                   {pageSize}
                 </option>
-              ))
-            }
-          </select>
-        </label>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div>
+          <span>página {pageIndex + 1}</span>
 
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage} >{'<<'}</button>
-        <button onClick={() => previousPage()} disabled={!canPreviousPage} >Previous</button>
-        <button onClick={() => nextPage()} disabled={!canNextPage} >Next</button>
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} >{'>>'}</button>
+          <button
+            className='btn__primary'
+            onClick={() => gotoPage(0)}
+            disabled={!canPreviousPage}
+          >
+            {'<<'}
+          </button>
+          <button
+            className='btn__primary'
+            onClick={() => previousPage()}
+            disabled={!canPreviousPage}
+          >
+            Anterior
+          </button>
+          <button
+            className='btn__primary'
+            onClick={() => nextPage()}
+            disabled={!canNextPage}
+          >
+            Siguiente
+          </button>
+          <button
+            className='btn__primary'
+            onClick={() => gotoPage(pageCount - 1)}
+            disabled={!canNextPage}
+          >
+            {'>>'}
+          </button>
+        </div>
       </div>
     </div>
   )

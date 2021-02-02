@@ -3,7 +3,7 @@
   margin-top: 20px;
   margin-bottom: 10px;
   width: 100%;
-  height: 60px;
+  height: 50px;
   max-width: 400px;
   position: relative;
   overflow: hidden;
@@ -23,11 +23,11 @@
     border: none;
     outline: 0px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     &:focus + .input-material__label .input-material__text,
     &:valid + .input-material__label .input-material__text {
-      transform: translateY(-150%);
+      transform: translateY(-120%);
       font-size: 0.8rem;
       font-weight: 500;
       color: $primary_color;
@@ -41,7 +41,7 @@
 
   &__label {
     position: absolute;
-    bottom: 14px;
+    bottom: 12px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -88,4 +88,62 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 5000s;
   -webkit-text-fill-color: #fff;
+}
+
+.btn__primary {
+  background-color: $primary_color;
+  color: white;
+  margin: 4px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: #484d53;
+  }
+
+  &:disabled {
+    background-color: $disable_color;
+  }
+  
+}
+
+.btn__secondary {
+  
+}
+
+.select {
+  box-sizing: border-box;
+  background-color: $primary_color;
+  color: white;
+  margin: 4px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+  &:focus, &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: #484d53;
+  }
+}
+
+.form__client {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
 }

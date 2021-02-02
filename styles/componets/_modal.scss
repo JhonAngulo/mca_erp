@@ -1,0 +1,37 @@
+*:global(body) {
+  overflow: hidden;
+}
+
+.backdrop {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.modal {
+  background-color: white;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  padding: 1em;
+
+  &__title {
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $primary_color;
+  }
+
+  &__container {
+    padding: 0 10%;
+    height: 80%;
+    overflow: auto;
+  }
+}

@@ -12,7 +12,7 @@ function Input({ text = 'sample', type = 'text', event, value = '' }) {
 
   return (
     <div className='input-material'>
-      <input id={text} type={type} defaultValue={state} className='input-material__input' name={text} onChange={event} required />
+      <input name={text} type={type} defaultValue={state} className='input-material__input' onChange={event} required />
       <label htmlFor={text} className='input-material__label'>
         <span className='input-material__text'>{text}</span>
       </label>
